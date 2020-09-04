@@ -1,6 +1,7 @@
 var is_cursor_shown = true;
 
-var logo_string = "sendbyte";
+var logo_string = "~/blog# ./personal-data.sh";
+//var logo_string = "~# ./sendbyte.sh"
 var written_letters = 0;
 var written_string = "";
 
