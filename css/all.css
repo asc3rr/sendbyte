@@ -7,6 +7,7 @@ body{
 
 /* Logo bar section */
 #logo{
+    background-color: rgb(40, 40, 40);
     position: fixed;
     width: 100%;
 
@@ -28,6 +29,8 @@ body{
 
     padding-left: 5px;
     padding-right: 5px;
+
+    transition: .3s ease-in;
 }
 .button:hover{
     background-color: yellow;
@@ -56,4 +59,11 @@ body{
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
+}
+
+#footer{
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
 }
