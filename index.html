@@ -1,7 +1,3 @@
-<?php
-    require_once "connect.php";
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,20 +9,21 @@
     <link rel="stylesheet" href="css/all.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 
-    <script src="js/sendbyte-logo.js"></script>
+    <script src="js/sendbyte-caption.js"></script>
+    <script src="js/cookies-info.js"></script>
 </head>
 <body onload="write_logo()">
     <div id="logo">
         <a id="login-button" href=".">sendbyte - Blog informatyczny</a>
         <div id="buttons">
-            <a class="button" href="artykuly/">Najnowsze wpisy</a>
-            <a class="button" href="szukajka/">Szukajka</a>
+            <a class="button" href="artykuły/">Najnowsze wpisy</a>
+            <a class="button" href="mailto:borysgnacinski@protonmail.com">Kontakt</a>
         </div>
     </div>
     <main>
         <div id="top">
             <h2>
-                <span id="hero-logo">sendbyte</span><span id="cursor">|</span>
+                <span id="hero-caption">sendbyte</span><span id="cursor">|</span>
             </h2>
         </div>
         <div id="name">Borys Gnaciński - Blog informatyczny</div>
@@ -48,6 +45,12 @@
             <p>
         </div>
     </main>
+    <div id="cookies">
+        Ninejszy serwis korzysta z plików cookies. 
+        <span id="close-cookies" onclick="close_cookies_info()">
+            Zamknij
+        </span>
+    </div>
     <div id="footer">
         sendbyte.pl
     </div>

@@ -67,3 +67,29 @@ body{
 
     text-align: center;
 }
+
+#cookies{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+
+#close-cookies{
+    float: right;
+    margin-right: 25px;
+
+    transition: .3s ease-in;
+}
+#close-cookies:hover{
+    color: red;
+}

@@ -1,14 +1,13 @@
 var is_cursor_shown = true;
-
-var logo_string = "~/blog# ./personal-data.sh";
-//var logo_string = "~# ./sendbyte.sh"
+        
+var logo_string = "~/blog/articles# ./newest-articles.sh"
 var written_letters = 0;
 var written_string = "";
 
 // TODO: zrobić wypisywanie napisu
 
 function write_logo(){
-    document.getElementById("hero-logo").innerHTML = written_string;
+    document.getElementById("hero-caption").innerHTML = written_string;
 
 
     written_string += logo_string[written_letters];
@@ -21,7 +20,7 @@ function write_logo(){
         cursor();
     }
     else{
-        setTimeout("write_logo()", 150)
+        setTimeout("write_logo()", 150)        
     }
 }
 
@@ -37,8 +36,6 @@ function cursor(){
 
         is_cursor_shown = true;
     }
-
-    console.log("hello");
 
     setTimeout("cursor()", 600);
 }
