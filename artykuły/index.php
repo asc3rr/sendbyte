@@ -17,7 +17,7 @@
 </head>
 <body onload="write_logo()">
     <div id="logo">
-        <a id="login-button" href=".">sendbyte - Blog informatyczny</a>
+        <a id="login-button" href="../">sendbyte - Blog informatyczny</a>
         <div id="buttons">
             <a class="button" href="../">Strona główna</a>
             <a class="button" href="mailto:borysgnacinski@protonmail.com">Kontakt</a>
