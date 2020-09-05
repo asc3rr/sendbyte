@@ -52,7 +52,7 @@
         </span>
     </div>
     <div id="footer">
-        sendbyte.pl
+        &copy <?php echo date("Y"); ?> sendbyte.pl
     </div>
 </body>
 </html>

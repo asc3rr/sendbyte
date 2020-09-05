@@ -5,7 +5,7 @@
         header("Location: ../artykuły/");
     }
 
-    $id = $_GET['id'];
+    $id = mysql_real_escape_string($db, htmlentites($_GET['id'], ENT_QUOTES, "utf-8"));
 
     $get_article_data_sql = "SELECT * FROM articles WHERE id=$id";
 
@@ -51,7 +51,7 @@
         </div>
     </main>
     <div id="footer">
-        sendbyte.pl
+        &copy <?php echo date("Y"); ?> sendbyte.pl
     </div>
 </body>
 </html>
