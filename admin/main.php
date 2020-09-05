@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/all.css">
 </head>
 <body>
+    <a href="guide.php" target="_blank">Instrukcja</a>
     <h2>Dodaj artykuł</h2>
     <form action="add-article.php" method="post">
         Tytuł: <input type="text" placeholder="Tytuł" name="title"><br />
