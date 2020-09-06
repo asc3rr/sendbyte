@@ -16,9 +16,8 @@
     $id = $db->query($get_number_of_articles_sql)->num_rows + 1;
     $title = mysqli_real_escape_string($_POST['title']);
     $content = mysqli_real_escape_string($_POST['content']);
-    $date = date();
 
-    $insert_sql = "INSERT INTO `articles`(`id`, `title`, `content`, `date`) VALUES ($id, '$title', '$content', $date)";
+    $insert_sql = "INSERT INTO `articles`(`id`, `title`, `content`) VALUES ($id, '$title', '$content')";
 
     $db->query($insert_sql);
 
