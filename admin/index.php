@@ -20,6 +20,8 @@
 
     <title>blog.sendbyte - Admin</title>
 
+    <link rel="icon" href="../favicon.png">
+
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/all.css">
 </head>

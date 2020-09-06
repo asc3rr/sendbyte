@@ -12,6 +12,8 @@
 
     <title>Instrukcja tworzenia wpisów</title>
 
+    <link rel="icon" href="../favicon.png">
+
     <link rel="stylesheet" href="../css/all.css">    
     <link rel="stylesheet" href="../css/index.css">    
 </head>

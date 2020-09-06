@@ -8,6 +8,8 @@
 
     <title>sendbyte - Blog informatyczny</title>
 
+    <link rel="icon" href="../favicon.png">
+
     <link rel="stylesheet" href="../css/index.css" type="text/css">
     <link rel="stylesheet" href="../css/articles.css" type="text/css">
     <link rel="stylesheet" href="../css/all.css" type="text/css">
