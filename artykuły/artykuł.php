@@ -5,7 +5,7 @@
         header("Location: ../artykuły/");
     }
 
-    $id = mysql_real_escape_string($db, htmlentites($_GET['id'], ENT_QUOTES, "utf-8"));
+    $id = mysqli_real_escape_string($db, htmlentities($_GET['id'], ENT_QUOTES, "utf-8"));
 
     $get_article_data_sql = "SELECT * FROM articles WHERE id=$id";
 
@@ -15,6 +15,7 @@
 
             $title = $all_data['title'];
             $content = $all_data['content'];
+            $date = $all_data['date'];
         }
         else{
             header("Location: ../artykuły/");
@@ -40,13 +41,15 @@
         <a id="login-button" href="../">sendbyte - Blog informatyczny</a>
         <div id="buttons">
             <a class="button" href="../">Strona główna</a>
-            <a class="button" href="../szukaj/">Wyszukiarka</a>
             <a class="button" href="mailto:borysgnacinski@protonmail.com">Kontakt</a>
         </div>
     </div>
     <main>
         <div id="article">
-            <h3 id="article-title"><?php echo $title; ?></h3>
+            <h3 id="article-title">
+                <?php echo $title; ?>
+                <span id="article-date"><?php echo $date; ?></span>
+            </h3>
             <span id="article-content"><?php echo $content?></span>
         </div>
     </main>

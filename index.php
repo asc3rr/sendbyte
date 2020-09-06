@@ -44,7 +44,6 @@
             </p>
             <p>
         </div>
-        <?php echo htmlspecialchars('<code><?php echo "dupa123"?></code>'); ?>
     </main>
     <div id="cookies">
         Ninejszy serwis korzysta z plików cookies. 

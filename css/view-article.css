@@ -1,8 +1,11 @@
 #article{
     font-size: 25px;
 }
-
 #article-title{
     font-size: 30px;
     color: red;
+}
+#article-date{
+    float: right;
+    padding-right: 20px;
 }
