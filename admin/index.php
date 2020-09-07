@@ -4,7 +4,7 @@
 
     $client_ip = $_SERVER['REMOTE_ADDR'];
 
-    if($client_ip === "192.168.1.8"){
+    if($client_ip === "127.0.0.1"){
         $_SESSION["isLogged"] = true;
         $date = date();
 

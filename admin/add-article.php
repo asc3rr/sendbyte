@@ -14,10 +14,11 @@
     $get_number_of_articles_sql = "SELECT * FROM articles";
 
     $id = $db->query($get_number_of_articles_sql)->num_rows + 1;
-    $title = mysqli_real_escape_string($_POST['title']);
-    $content = mysqli_real_escape_string($_POST['content']);
+    $title = mysqli_real_escape_string($db, $_POST['title']);
+    $content = mysqli_real_escape_string($db, $_POST['content']);
+    $date = date('Y-m-d');
 
-    $insert_sql = "INSERT INTO `articles`(`id`, `title`, `content`) VALUES ($id, '$title', '$content')";
+    $insert_sql = "INSERT INTO `articles`(`id`, `title`, `content`, `date`) VALUES ($id, '$title', '$content', '$date')";
 
     $db->query($insert_sql);
 
