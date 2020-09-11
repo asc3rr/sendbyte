@@ -13,7 +13,16 @@
 
     $get_number_of_articles_sql = "SELECT * FROM articles";
 
-    $id = $db->query($get_number_of_articles_sql)->num_rows + 1;
+    $result = $db->query($get_number_of_articles_sql);
+
+    $id = 1;
+
+    if($result->num_rows > 0){
+        while($all_data = $result->fetch_assoc()){
+            $id += 1;
+        }
+    }
+
     $title = mysqli_real_escape_string($db, $_POST['title']);
     $content = mysqli_real_escape_string($db, $_POST['content']);
     $date = date('Y-m-d');

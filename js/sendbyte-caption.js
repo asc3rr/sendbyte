@@ -1,6 +1,6 @@
 var is_cursor_shown = true;
 
-var logo_string = "~/blog# ./personal-information.sh"
+var logo_string = "~/blog# ./personal-info.sh"
 var written_letters = 0;
 var written_string = "";
 
