@@ -2,14 +2,7 @@
     require_once "../connect.php";
     session_start();
 
-    $client_ip = $_SERVER['REMOTE_ADDR'];
-
-    if($client_ip === "127.0.0.1"){
-        $_SESSION["isLogged"] = true;
-        $date = date();
-
-        $insert_sql = "INSERT INTO `login_log`(`date`, `ip_address`) VALUES ($date, $client_ip)";
-
+    if(isset($_SESSION['isLogged'])){
         header("Location: main.php");
     }
 ?>
