@@ -19,6 +19,7 @@
         <a id="login-button" href=".">sendbyte - Blog informatyczny</a>
         <div id="buttons">
             <a class="button" href="artykuły/">Najnowsze wpisy</a>
+            <a class="button" href="https://github.com/asc3rr/">Mój Github</a>
             <a class="button" href="mailto:borysgnacinski@protonmail.com">Kontakt</a>
         </div>
     </div>
