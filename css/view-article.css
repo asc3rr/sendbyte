@@ -9,3 +9,9 @@
     float: right;
     padding-right: 20px;
 }
+
+.img{
+    width: 100%;
+
+    text-align: center;
+}
