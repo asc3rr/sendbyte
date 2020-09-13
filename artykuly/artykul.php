@@ -15,6 +15,7 @@
 
             $title = $all_data['title'];
             $content = str_replace('<img src="', '<img loading="lazy" src="', nl2br($all_data['content']));
+
             $date = $all_data['date'];
         }
         else{

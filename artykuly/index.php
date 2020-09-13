@@ -55,7 +55,7 @@
                         $content = $article_data[2];
 
                         echo <<<ENDL
-                        <div class="article" onclick="location.href='artykuł.php?id=$id'">
+                        <div class="article" onclick="location.href='artykul.php?id=$id'">
                             <span class="article-title">$title</span><br />
                             <br />
                             <span class="article-content">$content...</span>
