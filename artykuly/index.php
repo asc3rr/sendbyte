@@ -1,5 +1,9 @@
 <?php
     require_once "../connect.php";
+
+    function isMobile() {
+        return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -15,11 +19,17 @@
     <link rel="stylesheet" href="../css/all.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 
+    <?php
+        if(isMobile()){
+            echo '<link rel="stylesheet" href="../css/mobile.css" type="text/css">';
+        }
+    ?>
+
     <script src="../js/articles-caption.js"></script>
 </head>
 <body onload="write_logo()">
     <div id="logo">
-        <a id="login-button" href="../">sendbyte - Blog informatyczny</a>
+        <span id="logo-caption">sendbyte - Blog informatyczny</span>
         <div id="buttons">
             <a class="button" href="../">Strona główna</a>
             <a class="button" href="https://github.com/asc3rr/">Mój Github</a>

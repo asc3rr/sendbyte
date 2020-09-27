@@ -1,3 +1,9 @@
+<?php 
+    function isMobile() {
+        return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -9,14 +15,20 @@
 
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <link rel="stylesheet" href="css/all.css" type="text/css">
+    <link rel="stylesheet" href="css/fontello/css/fontello.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 
+    <?php
+        if(isMobile()){
+            echo '<link rel="stylesheet" href="css/mobile.css" type="text/css">';
+        }
+    ?>
+
     <script src="js/sendbyte-caption.js"></script>
-    <script src="js/cookies-info.js"></script>
 </head>
 <body onload="write_logo()">
     <div id="logo">
-        <a id="login-button" href=".">sendbyte - Blog informatyczny</a>
+        <span id="logo-caption">sendbyte - Blog informatyczny</span>
         <div id="buttons">
             <a class="button" href="artykuly/">Najnowsze wpisy</a>
             <a class="button" href="https://github.com/asc3rr/">Mój Github</a>
@@ -35,7 +47,7 @@
         
             <h4>Języki w których programuję?</h4>
             <p>
-                W Pythonie programuję od 2 lat, w PHP od 6 miesięcy, a w C# 3 miesięcy (Dobieram język w zależności od projektu). Interesuję się również administracją systemami.
+                W Pythonie programuję od 1,5 roku, w PHP od 6 miesięcy, a w C# 3 miesięcy (Dobieram język w zależności od projektu). Interesuję się również administracją systemami.
             </p>
 
             <h4>Co będzie pojawiać się na blogu?</h4>
@@ -48,12 +60,6 @@
             <p>
         </div>
     </main>
-    <div id="cookies">
-        Ninejszy serwis korzysta z plików cookies. 
-        <span id="close-cookies" onclick="close_cookies_info()">
-            Zamknij
-        </span>
-    </div>
     <div id="footer">
         &copy <?php echo date("Y"); ?> sendbyte.pl
     </div>

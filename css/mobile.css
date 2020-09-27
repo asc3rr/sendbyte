@@ -1,0 +1,17 @@
+#logo-caption{
+    float: none;
+
+    text-align: center;
+    font-size: 250%;
+}
+
+#buttons{
+    float: none;
+
+    text-align: center;
+    font-size: 200%;
+}
+
+main{
+    margin-top: 15%;
+}
