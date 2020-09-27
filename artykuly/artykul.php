@@ -51,7 +51,7 @@
     <div id="logo">
         <span id="logo-caption">sendbyte - Blog informatyczny</span>
         <div id="buttons">
-            <a class="button" href="../">Strona główna</a>
+            <a class="button" href="index.php">Powrót</a>
             <a class="button" href="https://github.com/asc3rr/">Mój Github</a>
             <a class="button" href="mailto:borysgnacinski@protonmail.com">Kontakt</a>
         </div>
