@@ -45,9 +45,9 @@
         <div id="description">
             Cześć. Jestem Borys, mam 14 lat i mieszkam we Wrocławiu.<br />
         
-            <h4>Języki w których programuję?</h4>
+            <h4>W jakich językach progamuję?</h4>
             <p>
-                W Pythonie programuję od 1,5 roku, w PHP od 6 miesięcy, a w C# 3 miesięcy (Dobieram język w zależności od projektu). Interesuję się również administracją systemami.
+                W Pythonie programuję od 1,5 roku, w PHP od 6 miesięcy, a w C# 3 od miesięcy (Dobieram język w zależności od projektu). Interesuję się również administracją systemami.
             </p>
 
             <h4>Co będzie pojawiać się na blogu?</h4>
