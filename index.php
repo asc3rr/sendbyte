@@ -47,7 +47,7 @@
         
             <h4>W jakich językach progamuję?</h4>
             <p>
-                W Pythonie programuję od 1,5 roku, w PHP od 6 miesięcy, a w C# 3 od miesięcy (Dobieram język w zależności od projektu). Interesuję się również administracją systemami.
+                W Pythonie programuję od 1,5 roku, w PHP od 6 miesięcy, a w C# od 3 miesięcy (Dobieram język w zależności od projektu). Interesuję się również administracją systemami.
             </p>
 
             <h4>Co będzie pojawiać się na blogu?</h4>
