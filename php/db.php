@@ -1,4 +1,6 @@
 <?php
+    include_once("../php/parsedown.php");
+
     class DB{
         private $conn;
 
@@ -16,7 +18,7 @@
         }
 
         public function getArticles(){
-            $sql = "SELECT * FROM articles";
+            $sql = "SELECT * FROM articles GROUP BY id DESC";
 
             $result = $this->conn->query($sql);
 
@@ -47,6 +49,49 @@
             $output = array($article_data["id"], $article_data["title"], $article_data["content"], $article_data["date"]);
 
             return $output;
+        }
+
+        public function addArticle($title, $content, $date){
+            $parser = new Parsedown();
+            $parsed_content = $parser->text($content);
+
+            $title = $this->sanitize($title);
+            $content = $this->sanitize($content);
+
+            $insert_sql = "INSERT INTO `articles`(`id`, `title`, `content`, `date`) VALUES (null, '$title', '$parsed_content', '$date')";
+
+            $this->conn->query($insert_sql);
+        }
+
+        public function deleteArticle($id){
+            $id = $this->sanitize($id);
+
+            $delete_sql = "DELETE FROM `articles` WHERE id=$id";
+
+            $this->conn->query($delete_sql);
+        }
+
+        public function login($login, $password){
+            $login = $this->sanitize($login);
+            $password = $this->sanitize($password);
+
+            $sql = "SELECT * FROM admin";
+
+            if($result = $this->conn->query($sql)){
+                if($result->num_rows > 0){
+                    $user = $result->fetch_assoc();
+
+                    if(password_verify($password, $user['password'])){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
         }
     }
 ?>

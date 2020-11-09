@@ -11,18 +11,14 @@
         header("Location: main.php");
     }
 
+    include_once("../php/db.php");
+    $db = new DB();
+
     $title = $_POST['title'];
     $content = $_POST['content'];
     $date = date('Y-m-d');
 
-    include_once("../php/parsedown.php");
-    include_once("../php/db.php");
-
-    $parser = new Parsedown();
-    $db = new DB();
-
-    $parsed_content = $parser->text($content);
-    $db->addArticle($title, $parsed_content, $date);
+    $db->addArticle($title, $content, $date);
 
     header("Location: main.php");
 ?>
