@@ -1,24 +1,21 @@
 <?php
-    require_once "../connect.php";
     session_start();
 
-    $login = mysqli_real_escape_string($db, htmlentities($_POST['login'], ENT_QUOTES, "utf-8"));
-    $password = mysqli_real_escape_string($db, htmlentities($_POST['password'], ENT_QUOTES, "utf-8"));
+    include_once("../php/db.php");
 
-    $check_login_sql = "SELECT * FROM `admin` WHERE login='$login'";
+    $login = $_POST['login'];
+    $password = $_POST['password'];
 
-    $result = $db->query($check_login_sql);
+    $db = new DB();
 
-    if($result->num_rows > 0){
-        $all_data = $result->fetch_assoc();
+    $is_login_succeed = $db->login($login, $password);
 
-        if(password_verify($password, $all_data['password'])){
-            $_SESSION['isLogged'] = true;
-            
-            header("Location: main.php");
-        }
-        else{
-            header("Location: index.php");
-        }
+    if($is_login_succeed){
+        $_SESSION['isLogged'] = true;
+
+        header("Location: main.php");
+    }
+    else{
+        header("Location: index.php");
     }
 ?>
