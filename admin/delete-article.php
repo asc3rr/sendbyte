@@ -7,11 +7,11 @@
         header("Location: ../");
     }
 
-    $id = mysqli_real_escape_string($db, $_POST['id']);
+    $id = $_POST['id'];
 
-    $delete_sql = "DELETE FROM `articles` WHERE `id`=$id";
-
-    $db->query($delete_sql);
+    include_once("../php/db.php");
+    $db = new DB();
+    $db->deleteArticle($id);
 
     header("Location: main.php");
 ?>
