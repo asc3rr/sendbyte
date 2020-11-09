@@ -11,25 +11,18 @@
         header("Location: main.php");
     }
 
-    $get_number_of_articles_sql = "SELECT * FROM articles";
-
-    $result = $db->query($get_number_of_articles_sql);
-
-    $id = 1;
-
-    if($result->num_rows > 0){
-        while($all_data = $result->fetch_assoc()){
-            $id += 1;
-        }
-    }
-
-    $title = mysqli_real_escape_string($db, $_POST['title']);
-    $content = mysqli_real_escape_string($db, $_POST['content']);
+    $title = $_POST['title'];
+    $content = $_POST['content'];
     $date = date('Y-m-d');
 
-    $insert_sql = "INSERT INTO `articles`(`id`, `title`, `content`, `date`) VALUES ($id, '$title', '$content', '$date')";
+    include_once("../php/parsedown.php");
+    include_once("../php/db.php");
 
-    $db->query($insert_sql);
+    $parser = new Parsedown();
+    $db = new DB();
+
+    $parsed_content = $parser->text($content);
+    $db->addArticle($title, $parsed_content, $date);
 
     header("Location: main.php");
 ?>
