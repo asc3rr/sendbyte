@@ -44,38 +44,28 @@
         </div>
         <div id="articles">
         <?php
-            $get_articles_sql = "SELECT * FROM articles";
+            include_once("../php/db.php");
 
-            if($result = $db->query($get_articles_sql)){
-                if($result->num_rows > 0){
-                    $articles = array();
+            $db = new DB();
 
-                    while($article_data = $result->fetch_assoc()){
-                        $id = $article_data['id'];
-                        $title = $article_data['title'];
+            $articles = $db->getArticles();
 
-                        $content = substr(nl2br($article_data['content']), 0, 197);
+            if(sizeof($articles) === 0){
+                echo "Nie znaleźliśmy żadnych artykułów";
+            }
 
-                        array_push($articles, array($id, $title, $content));
-                    }
+            foreach($articles as $article){
+                $id = $article[0];
+                $title = $article[1];
+                $content = $article[2];
 
-                    foreach(array_reverse($articles) as $article_data){
-                        $id = $article_data[0];
-                        $title = $article_data[1];
-                        $content = $article_data[2];
-
-                        echo <<<ENDL
-                        <div class="article" onclick="location.href='artykul.php?id=$id'">
-                            <span class="article-title">$title</span><br />
-                            <br />
-                            <span class="article-content">$content...</span>
-                        </div>
-                        ENDL;
-                    }
-                }
-                else{
-                    echo "Nie znaleźliśmy żadnych artykułów.";
-                }
+                echo <<<ENDL
+                    <div class="article" onclick="location.href='artykul.php?id=$id'">
+                        <span class="article-title">$title</span><br />
+                        <br />
+                        <span class="article-content">$content...</span>
+                    </div>
+                ENDL;
             }
         ?>
         </div>

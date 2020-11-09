@@ -9,23 +9,17 @@
         header("Location: ../artykuły/");
     }
 
-    $id = mysqli_real_escape_string($db, htmlentities($_GET['id'], ENT_QUOTES, "utf-8"));
+    $id = $_GET['id'];
 
-    $get_article_data_sql = "SELECT * FROM articles WHERE id=$id";
+    include_once("../php/db.php");
 
-    if($result = $db->query($get_article_data_sql)){
-        if($result->num_rows > 0){
-            $all_data = $result->fetch_assoc();
+    $db = new DB();
 
-            $title = $all_data['title'];
-            $content = str_replace('<img src="', '<img loading="lazy" src="', nl2br($all_data['content']));
+    $article_data = $db->getArticleData($id);
 
-            $date = $all_data['date'];
-        }
-        else{
-            header("Location: ../artykuły/");
-        }
-    }
+    $title = $article_data[1];
+    $content = $article_data[2];
+    $date = $article_data[3];
 ?>
 <!DOCTYPE html>
 <html lang="pl">
