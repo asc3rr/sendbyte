@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="../css/all.css">
 </head>
 <body>
-    <a style="color: white;" href="guide.php" target="_blank">Instrukcja</a>
+    <a href="logout.php" style="color: white;">Wyloguj się</a>
+
     <h2>Dodaj artykuł</h2>
     <form action="add-article.php" method="post">
         Tytuł: <input type="text" placeholder="Tytuł" name="title"><br />
@@ -29,6 +30,7 @@
         <br />
         <input type="submit" value="Dodaj wpis">
     </form>
+
     <h2>Usuń artykuł</h2>
     <form action="delete-article.php" method="post">
         ID artykułu: <input type="number" name="id" placeholder="ID"><br />
