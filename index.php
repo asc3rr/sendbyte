@@ -2,6 +2,8 @@
     function isMobile() {
         return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
     }
+
+    $years = date("Y") - 2006;
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +45,7 @@
         </div>
         <div id="name">Borys Gnaciński - Blog informatyczny</div>
         <div id="description">
-            Cześć. Jestem Borys, mam 14 lat i mieszkam we Wrocławiu.<br />
+            Cześć. Jestem Borys, mam <?php echo $years; ?> lat i mieszkam we Wrocławiu.<br />
         
             <h4>W jakich językach progamuję?</h4>
             <p>
