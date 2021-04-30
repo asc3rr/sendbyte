@@ -34,7 +34,7 @@
         <div id="buttons">
             <a class="button" href="artykuly/">Najnowsze wpisy</a>
             <a class="button" href="https://github.com/asc3rr/">Mój Github</a>
-            <a class="button" href="mailto:borysgnacinski@protonmail.com">Kontakt</a>
+            <a class="button" href="mailto:borysgnacinski@gmail.com">Kontakt</a>
         </div>
     </div>
     <main>
